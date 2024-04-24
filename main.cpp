@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     int choice;
-    char stop
+    char stop;
 
     do{
         system("clear");
