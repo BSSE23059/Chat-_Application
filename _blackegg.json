@@ -9,14 +9,8 @@
         "Private Chats": [
             {
                 "abdhash": {
-                    "You": null,
-                    "abdhash": null
-                }
-            },
-            {
-                "DJ": {
-                    "DJ": null,
-                    "You": null
+                    "You": [],
+                    "abdhash": []
                 }
             }
         ]

@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\Chat__Application.dir/objects.a
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\Chat__Application.dir/objects.a @CMakeFiles\Chat__Application.dir\objects1.rsp
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\Chat__Application.dir/objects.a -Wl,--no-whole-archive -o Chat__Application.exe -Wl,--out-implib,libChat__Application.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Chat__Application.dir\linkLibs.rsp
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/Chat__Application.dir/main.cpp.o -o Chat__Application.exe -Wl,--out-implib,libChat__Application.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

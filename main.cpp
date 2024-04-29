@@ -6,6 +6,7 @@
 #include "userInterface.h"
 #include "createChats.h"
 #include "showChats.h"
+#include "Message.h"
 using namespace std;
 
 

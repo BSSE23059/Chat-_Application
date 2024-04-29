@@ -2,18 +2,11 @@
     {
         "DJ": {
             "Name": "Ahmad",
-            "Password": "nude"
+            "Password": "mac"
         }
     },
     {
-        "Private Chats": [
-            {
-                "_blackegg": {
-                    "You": null,
-                    "_blackegg": null
-                }
-            }
-        ]
+        "Private Chats": []
     },
     {
         "Group Chats": []

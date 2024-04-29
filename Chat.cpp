@@ -5,5 +5,5 @@ vector<string> & Chat::getUsers() {
 }
 
 vector<Message *> &Chat::getMessages() {
-    return messages
+    return messages;
 }

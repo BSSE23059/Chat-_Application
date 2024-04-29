@@ -2,6 +2,7 @@
 
 void displayChats(string username, string name, string password){
 
+    UserService *userService = UserService::getInstance();
     string filename = username + ".json";
     ifstream userChatsFile(filename);
     json userChats;
@@ -51,6 +52,11 @@ void displayChats(string username, string name, string password){
                             }
                             // Send message logic here
                             cout << "Message sent: " << message << endl;
+                            time_t now = time(0);
+                            tm* localTime = localtime(&now);
+                            string date = to_string(localTime->tm_year + 1900) + "-" + to_string(localTime->tm_mon + 1) + "-" + to_string(localTime->tm_mday) + "    " +
+                                          to_string(localTime->tm_hour) + ":"+ to_string(localTime->tm_min);
+                            userService->sendMessage(message,date,username,chatName);
                         }
                         break;
                     }

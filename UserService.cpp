@@ -74,8 +74,8 @@ void UserService::addPrivateChat(PrivateChat *privateChat) {
 
     json privateChatData;
     privateChatData[privateChat->getUsers()[1]] = {
-            {"You",{}},
-            {privateChat->getUsers()[1],{}}
+            {"You",json::array()},
+            {privateChat->getUsers()[1],json::array()}
     };
 
     privateChats.push_back(privateChatData);
@@ -96,8 +96,8 @@ void UserService::addPrivateChat(PrivateChat *privateChat) {
 
     json privateChatData1;
     privateChatData1[privateChat->getUsers()[0]] = {
-            {"You",{}},
-            {privateChat->getUsers()[0],{}}
+            {"You",json::array()},
+            {privateChat->getUsers()[0],json::array()}
     };
 
     privateChats1.push_back(privateChatData1);
@@ -142,3 +142,51 @@ void UserService::loginUser(const std::string &userName, const std::string &pass
 
 }
 
+void UserService::sendMessage(string &message, string &date, string &fromUser, string &toUser) {
+    if(usersById.find(fromUser) != usersById.end() && usersById.find(toUser) != usersById.end()){
+        User *user = usersById[fromUser];
+        user->messageUser(toUser,message);
+    }
+
+    string firstUserFile = fromUser + ".json";
+    ifstream getUser1PrivateChat(firstUserFile);
+    json privateChatUser1;
+    getUser1PrivateChat >> privateChatUser1;
+
+    getUser1PrivateChat.close();
+
+    cout << privateChatUser1 << endl;
+    json userMessage1 = {
+            {"message", message},
+            {"date", date}
+    };
+
+
+    json &user1Array = privateChatUser1["Private Chats"][toUser]["You"];
+    user1Array.push_back(userMessage1);
+
+    cout << privateChatUser1 << endl;
+    ofstream putMessageUser1(firstUserFile);
+    putMessageUser1 << privateChatUser1.dump(4) << endl;
+    putMessageUser1.close();
+
+    string secondUserFile = toUser + ".json";
+    ifstream getUser2PrivateChat(secondUserFile);
+
+    json privateChatUser2;
+    getUser2PrivateChat >> privateChatUser2;
+    getUser2PrivateChat.close();
+
+    json userMessage2 = {
+            {"message", message},
+            {"date", date}
+    };
+
+    json &user2Array = privateChatUser2["Private Chats"][fromUser][fromUser];
+    user2Array.push_back(userMessage2);
+
+    ofstream putMessageUser2(secondUserFile);
+    putMessageUser2 << privateChatUser2.dump(4) << endl;
+    putMessageUser2.close();
+
+}
