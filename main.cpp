@@ -1,7 +1,13 @@
 #include <iostream>
-#include "UserService.cpp"
-#include "User.cpp"
+#include "UserService.h"
+#include "User.h"
+#include "Chat.h"
+#include "PrivateChat.h"
+#include "userInterface.h"
+#include "createChats.h"
+#include "showChats.h"
 using namespace std;
+
 
 int main(){
     int choice;
@@ -9,6 +15,7 @@ int main(){
 
     do{
         system("clear");
+
         UserService *userService = UserService::getInstance();
         cout << "__________________________________________________" << endl;
         cout << "                                                  " << endl;
@@ -21,7 +28,13 @@ int main(){
         cin >> choice;
         switch(choice){
             case 1:{
+                string username,pass;
 
+                cout << "Enter username :";
+                cin >> username;
+                cout << "Enter password :";
+                cin >> pass;
+                userService->loginUser(username,pass);
                 break;
             }
             case 2:{
@@ -30,9 +43,22 @@ int main(){
                 cin >> name;
                 cout << "Enter your username :";
                 cin >> ID;
+                ifstream verifyUserNames("users.txt");
+                string usernames;
+                while(getline(verifyUserNames,usernames)){
+                    if(ID == usernames){
+                        cout << "Username already exists, Please enter another username :";
+                        cin >> ID;
+
+                        verifyUserNames.clear();
+                        verifyUserNames.seekg(0,ios::beg);
+                    }
+                }
+                verifyUserNames.close();
                 cout << "Enter password :";
                 cin >> password;
-                userService->addUser(ID,name,password);
+                auto *user = new User(ID,name,password);
+                userService->addUser(user);
                 break;
             }
             default:{

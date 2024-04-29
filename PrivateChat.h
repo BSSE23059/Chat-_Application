@@ -6,7 +6,9 @@ using namespace std;
 
 class PrivateChat : public Chat{
 public:
-    PrivateChat(int firstUser, int secondUser);
+    PrivateChat(string firstUser, string secondUser);
+    void displayUsers() override;
+    void addMessage(Message* message) override;
 };
 
 

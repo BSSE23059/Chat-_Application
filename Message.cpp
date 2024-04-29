@@ -1,21 +1,23 @@
 #include "Message.h"
 
-template<typename T>
-T Message<T>::getMessageContent() {
+
+Message::Message(std::string messageContent, std::string time) {
+    content = messageContent;
+    timestamp = time;
+}
+
+string Message::getMessageContent() {
     return content;
 }
 
-template<typename T>
-time_t Message<T>::getMessageTime() {
+string Message::getMessageTime() {
     return timestamp;
 }
 
-template<typename T>
-void Message<T>::setMessageContent(T messageContent) {
+void Message::setMessageContent(string messageContent) {
     content = messageContent;
 }
 
-template<typename T>
-void Message<T>::setMessageTime(time_t time) {
+void Message::setMessageTime(string time) {
     timestamp = time;
 }

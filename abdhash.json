@@ -1,0 +1,21 @@
+[
+    {
+        "abdhash": {
+            "Name": "ABD",
+            "Password": "abdpass"
+        }
+    },
+    {
+        "Private Chats": [
+            {
+                "_blackegg": {
+                    "You": null,
+                    "_blackegg": null
+                }
+            }
+        ]
+    },
+    {
+        "Group Chats": []
+    }
+]

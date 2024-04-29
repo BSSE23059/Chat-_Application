@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Chat__Application.dir/main.cpp.o"
+  "CMakeFiles/Chat__Application.dir/main.cpp.obj"
+  "CMakeFiles/Chat__Application.dir/main.cpp.obj.d"
   "Chat__Application.exe"
+  "Chat__Application.exe.manifest"
   "Chat__Application.pdb"
   "libChat__Application.dll.a"
 )

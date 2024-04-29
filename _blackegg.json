@@ -1,0 +1,27 @@
+[
+    {
+        "_blackegg": {
+            "Name": "Hazim",
+            "Password": "hash"
+        }
+    },
+    {
+        "Private Chats": [
+            {
+                "abdhash": {
+                    "You": null,
+                    "abdhash": null
+                }
+            },
+            {
+                "DJ": {
+                    "DJ": null,
+                    "You": null
+                }
+            }
+        ]
+    },
+    {
+        "Group Chats": []
+    }
+]

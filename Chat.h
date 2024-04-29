@@ -7,13 +7,14 @@ using namespace std;
 
 class Chat {
 private:
-    int chatId;
     vector <Message*> messages;
 protected:
-    vector <int> users;
+    vector <string> users;
 public:
-    explicit Chat(int id);
-    vector<int>& getUsers();
+    vector<string>& getUsers();
+    vector<Message*>& getMessages();
+    virtual void displayUsers() = 0;
+    virtual void addMessage(Message* message) = 0;
 };
 
 

@@ -1,9 +1,9 @@
 #include "Chat.h"
 
-Chat::Chat(int id) {
-    chatId = id;
+vector<string> & Chat::getUsers() {
+    return users;
 }
 
-vector<int> & Chat::getUsers() {
-    return users;
+vector<Message *> &Chat::getMessages() {
+    return messages
 }

@@ -6,8 +6,10 @@ using namespace std;
 
 class GroupChat : public Chat{
 public:
-    void addUser(int user);
-    void removeUser(int user);
+    void addUser(string user);
+    void removeUser(string user);
+    void displayUsers() override;
+    void addMessage(Message* message) override;
 };
 
 

@@ -2,18 +2,17 @@
 #define CHAT__APPLICATION_MESSAGE_H
 #include <iostream>
 using namespace std;
-template<typename T>
 
 class Message {
 private:
-    T content;
-    time_t timestamp;
+    string content;
+    string timestamp;
 public:
-    Message(T messageContent, time_t time);
-    T getMessageContent();
-    time_t getMessageTime();
-    void setMessageContent(T messageContent);
-    void setMessageTime(time_t time);
+    Message(string messageContent, string time);
+    string getMessageContent();
+    string getMessageTime();
+    void setMessageContent(string messageContent);
+    void setMessageTime(string time);
 };
 
 
