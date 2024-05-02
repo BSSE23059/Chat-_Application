@@ -20,6 +20,7 @@ public:
     void addUser(User* user);
     void loginUser(string& userName, const string& password);
     void sendMessage(string& message, string& date, string& fromUser, string& toUser);
+    void displayMessages(string& fromUser,string& toUser);
     void displayUser(unordered_map<int, User*>& usersById);
     void removeUser(int userId);
     void addPrivateChat(PrivateChat* privateChat);

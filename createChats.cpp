@@ -30,7 +30,6 @@ void createChats(string username,string name, string pass){
                 while (getline(verifyUser, usernames)) {
                     if (friendName == usernames) {
                         string friendFile = toSmall(friendName) + ".json";
-                        cout << friendFile << endl;
                         ifstream getFriendData(friendFile);
                         json friendData;
                         getFriendData >> friendData;
@@ -45,12 +44,7 @@ void createChats(string username,string name, string pass){
                                 User user1(friendName, fName, friendPass);
                                 User user(username, name, pass);
 
-                                cout << user.getUserID() << endl;
-                                cout << user1.getUserID() << endl;
                                 auto *privateChat = new PrivateChat(user.getUserID(),user1.getUserID());
-
-                                cout << privateChat->getUsers()[0] << endl;
-                                cout << privateChat->getUsers()[1] << endl;
                                 userService->addPrivateChat(privateChat);
                             }
                         }

@@ -25,12 +25,12 @@
       <change beforePath="$PROJECT_DIR$/UserService.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UserService.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService.h" beforeDir="false" afterPath="$PROJECT_DIR$/UserService.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/abdullah.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/createChats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/createChats.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createChats.h" beforeDir="false" afterPath="$PROJECT_DIR$/createChats.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hazim.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ibrahim.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/r.out" beforeDir="false" afterPath="$PROJECT_DIR$/r.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/r.out.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/r.out.stackdump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/showChats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/showChats.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +114,7 @@
       <workItem from="1713978684714" duration="3882000" />
       <workItem from="1714029732513" duration="41594000" />
       <workItem from="1714360386506" duration="7835000" />
-      <workItem from="1714645100621" duration="5694000" />
+      <workItem from="1714645100621" duration="15806000" />
     </task>
     <servers />
   </component>

@@ -2,16 +2,63 @@
     {
         "Ibrahim": {
             "Name": "Ibrahim",
-            "Password": "nude"
+            "Password": "pass"
         }
     },
     {
         "Private Chats": [
             {
-                "Hazim": {
-                    "Hazim": [],
-                    "You": []
-                }
+                "Hazim": [
+                    {
+                        "Hazim": {
+                            "Hello": "19:56"
+                        }
+                    },
+                    {
+                        "Hazim": {
+                            "How are you": "19:56"
+                        }
+                    },
+                    {
+                        "Hazim": {
+                            "How are you": "20:16"
+                        }
+                    },
+                    {
+                        "You": {
+                            "Hey Babe": "20:16"
+                        }
+                    },
+                    {
+                        "You": {
+                            "Whats up": "20:16"
+                        }
+                    },
+                    {
+                        "Hazim": {
+                            "Nothing": "20:18"
+                        }
+                    }
+                ]
+            },
+            {
+                "Abdullah": [
+                    {
+                        "You": {
+                            "How are you": "20:24"
+                        }
+                    },
+                    {
+                        "You": {
+                            "Where are you": "20:24"
+                        }
+                    },
+                    {
+                        "You": {
+                            "Sorry": "20:24"
+                        }
+                    }
+                ]
             }
         ]
     },

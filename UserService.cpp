@@ -66,19 +66,14 @@ void UserService::addPrivateChat(PrivateChat *privateChat) {
 
     string firstFile = toLower(privateChat->getUsers()[0]) + ".json";
     ifstream firstUser(firstFile);
-    cout << firstFile << endl;
     json firstUserData;
     firstUser >> firstUserData;
-    cout << firstUserData << endl;
     firstUser.close();
 
     json &privateChats = firstUserData[1]["Private Chats"];
 
     json privateChatData;
-    privateChatData[privateChat->getUsers()[1]] = {
-            {"You",json::array()},
-            {privateChat->getUsers()[1],json::array()}
-    };
+    privateChatData[privateChat->getUsers()[1]] = json::array();
 
 
     privateChats.push_back(privateChatData);
@@ -96,10 +91,7 @@ void UserService::addPrivateChat(PrivateChat *privateChat) {
     json &privateChats1 = secondUserData[1]["Private Chats"];
 
     json privateChatData1;
-    privateChatData1[privateChat->getUsers()[0]] = {
-            {"You",json::array()},
-            {privateChat->getUsers()[0],json::array()}
-    };
+    privateChatData1[privateChat->getUsers()[0]] = json::array();
 
     privateChats1.push_back(privateChatData1);
 
@@ -158,12 +150,19 @@ void UserService::sendMessage(string &message, string &date, string &fromUser, s
     getDataFromFirstUserFile >> getFirstUserData;
     getDataFromFirstUserFile.close();
 
+    time_t now = time(0);
+    tm* localTime = localtime(&now);
+    string messageDate = to_string(localTime->tm_year + 1900) + "-" + to_string(localTime->tm_mon + 1) + "-" + to_string(localTime->tm_mday);
+
+    json message1;
+    message1["You"] = {
+            {message,date}
+    };
+
+
     for(auto& privateChat : getFirstUserData[1]["Private Chats"]){
         if(privateChat.contains(toUser)){
-            privateChat[toUser]["You"].push_back({
-                {message,date}
-            });
-            break;
+            privateChat[toUser].push_back(message1);
         }
     }
 
@@ -177,11 +176,13 @@ void UserService::sendMessage(string &message, string &date, string &fromUser, s
     getDataFromSecondUserFile >> secondUserData;
     getDataFromSecondUserFile.close();
 
+    json message2;
+    message2[fromUser] = {
+            {message,date}
+    };
     for(auto& privateChat : secondUserData[1]["Private Chats"]){
         if(privateChat.contains(fromUser)){
-            privateChat[fromUser][fromUser].push_back({
-                {message,date}
-            });
+            privateChat[fromUser].push_back(message2);
             break;
         }
     }
@@ -189,5 +190,36 @@ void UserService::sendMessage(string &message, string &date, string &fromUser, s
     ofstream secondUserOutData(secondUserFile);
     secondUserOutData << secondUserData.dump(4) << endl;
     secondUserOutData.close();
+
+}
+
+void UserService::displayMessages(std::string &fromUser,string& toUser) {
+
+    string filename = fromUser + ".json";
+    ifstream getUserMessages(filename);
+
+    json userMessages;
+    getUserMessages >> userMessages;
+    getUserMessages.close();
+
+    for(auto& privateChat : userMessages[1]["Private Chats"]){
+        if(privateChat.contains(toUser)){
+            for(auto& sender : privateChat[toUser]){
+                for (auto& message : sender.items()) {
+                    if(message.key() == "You"){
+                        for (auto& msgTime : message.value().items()) {
+                            cout << "\t\t" << msgTime.key() << " at " << msgTime.value();
+                        }
+                        cout << " : "<< message.key() << endl;
+                    } else if(message.key() == toUser){
+                        cout << message.key() << " : ";
+                        for (auto& msgTime : message.value().items()) {
+                            cout << msgTime.key() << " at " << msgTime.value() << endl;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }

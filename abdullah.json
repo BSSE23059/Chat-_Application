@@ -2,20 +2,32 @@
     {
         "Abdullah": {
             "Name": "Abdullah",
-            "Password": "pass"
+            "Password": "hash"
         }
     },
     {
         "Private Chats": [
             {
-                "Hazim": {
-                    "Hazim": [
-                        {
-                            "Hey": "2024-5-2  16:47"
+                "Hazim": []
+            },
+            {
+                "Ibrahim": [
+                    {
+                        "Ibrahim": {
+                            "How are you": "20:24"
                         }
-                    ],
-                    "You": []
-                }
+                    },
+                    {
+                        "Ibrahim": {
+                            "Where are you": "20:24"
+                        }
+                    },
+                    {
+                        "Ibrahim": {
+                            "Sorry": "20:24"
+                        }
+                    }
+                ]
             }
         ]
     },
