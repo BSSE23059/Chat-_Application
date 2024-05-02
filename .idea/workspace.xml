@@ -20,19 +20,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="87d390b4-8097-4340-935a-7e8d3dbf68bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UserService.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserService.h" beforeDir="false" afterPath="$PROJECT_DIR$/UserService.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abdullah.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/createChats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/createChats.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hazim.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibrahim.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/r.out" beforeDir="false" afterPath="$PROJECT_DIR$/r.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/r.out.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/r.out.stackdump" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showChats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/showChats.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
-    </list>
+    <list default="true" id="87d390b4-8097-4340-935a-7e8d3dbf68bf" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +102,7 @@
       <workItem from="1713978684714" duration="3882000" />
       <workItem from="1714029732513" duration="41594000" />
       <workItem from="1714360386506" duration="7835000" />
-      <workItem from="1714645100621" duration="15806000" />
+      <workItem from="1714645100621" duration="15844000" />
     </task>
     <servers />
   </component>
