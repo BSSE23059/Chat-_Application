@@ -18,7 +18,7 @@ private:
 public:
     static UserService* getInstance();
     void addUser(User* user);
-    void loginUser(const string& userName, const string& password);
+    void loginUser(string& userName, const string& password);
     void sendMessage(string& message, string& date, string& fromUser, string& toUser);
     void displayUser(unordered_map<int, User*>& usersById);
     void removeUser(int userId);

@@ -3,9 +3,9 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeReloadState">
     <option name="reloaded" value="true" />
   </component>
@@ -23,11 +23,15 @@
     <list default="true" id="87d390b4-8097-4340-935a-7e8d3dbf68bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserService.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/UserService.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_blackegg.json" beforeDir="false" afterPath="$PROJECT_DIR$/_blackegg.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abdhash.json" beforeDir="false" afterPath="$PROJECT_DIR$/abdhash.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dj.json" beforeDir="false" afterPath="$PROJECT_DIR$/dj.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserService.h" beforeDir="false" afterPath="$PROJECT_DIR$/UserService.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abdullah.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createChats.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/createChats.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/createChats.h" beforeDir="false" afterPath="$PROJECT_DIR$/createChats.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hazim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ibrahim.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/r.out" beforeDir="false" afterPath="$PROJECT_DIR$/r.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/r.out.stackdump" beforeDir="false" afterPath="$PROJECT_DIR$/r.out.stackdump" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.txt" beforeDir="false" afterPath="$PROJECT_DIR$/users.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,28 +59,32 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2fXRDc5itT2RwtFLd5JIUVvgX0A" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\student\Documents\GitHub\Chat-_Application" />
@@ -106,6 +114,7 @@
       <workItem from="1713978684714" duration="3882000" />
       <workItem from="1714029732513" duration="41594000" />
       <workItem from="1714360386506" duration="7835000" />
+      <workItem from="1714645100621" duration="5694000" />
     </task>
     <servers />
   </component>

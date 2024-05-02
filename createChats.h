@@ -10,5 +10,5 @@ using json = nlohmann::json;
 using namespace std;
 
 void createChats(string username, string name, string pass);
-
+string toSmall(const std::string& str);
 #endif //CHAT__APPLICATION_CREATECHATS_H
