@@ -1,0 +1,58 @@
+[
+    {
+        "Hazim": {
+            "Name": "Hazim",
+            "Password": "hash"
+        }
+    },
+    {
+        "Private Chats": [
+            {
+                "Abdullah": {
+                    "Abdullah": [
+                        {
+                            "Hey buddy": "2024-5-1  23:36"
+                        },
+                        {
+                            "whassup": "2024-5-1  23:36"
+                        },
+                        {
+                            "bye": "2024-5-1  23:37"
+                        }
+                    ],
+                    "You": [
+                        {
+                            "hello": "2024-5-1  23:35"
+                        },
+                        {
+                            "how are you": "2024-5-1  23:35"
+                        },
+                        {
+                            "bye bye": "2024-5-1  23:36"
+                        },
+                        {
+                            "Where are you?": "2024-5-2  9:51"
+                        }
+                    ]
+                }
+            },
+            {
+                "Ibrahim": {
+                    "Ibrahim": [
+                        {
+                            "Hey babe": "2024-5-2  10:34"
+                        }
+                    ],
+                    "You": [
+                        {
+                            "Whassup Dawg": "2024-5-2  10:11"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Group Chats": []
+    }
+]

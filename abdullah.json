@@ -1,0 +1,44 @@
+[
+    {
+        "Abdullah": {
+            "Name": "Abdullah",
+            "Password": "pass"
+        }
+    },
+    {
+        "Private Chats": [
+            {
+                "Hazim": {
+                    "Hazim": [
+                        {
+                            "hello": "2024-5-1  23:35"
+                        },
+                        {
+                            "how are you": "2024-5-1  23:35"
+                        },
+                        {
+                            "bye bye": "2024-5-1  23:36"
+                        },
+                        {
+                            "Where are you?": "2024-5-2  9:51"
+                        }
+                    ],
+                    "You": [
+                        {
+                            "Hey buddy": "2024-5-1  23:36"
+                        },
+                        {
+                            "whassup": "2024-5-1  23:36"
+                        },
+                        {
+                            "bye": "2024-5-1  23:37"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "Group Chats": []
+    }
+]

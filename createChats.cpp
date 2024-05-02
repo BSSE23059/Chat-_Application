@@ -19,9 +19,6 @@ void createChats(string username,string name, string pass){
         switch(choice){
             case 1:{
 
-                cout << username << endl;
-                cout << name << endl;
-                cout << pass << endl;
                 string friendName;
                 ifstream verifyUser("users.txt");
                 string usernames;
@@ -42,8 +39,6 @@ void createChats(string username,string name, string pass){
                                 json userInfo = userCredentials[friendName];
                                 string fName = userInfo["Name"];
                                 string friendPass = userInfo["Password"];
-                                cout << fName << endl;
-                                cout << friendPass << endl;
                                 User user1(friendName, fName, friendPass);
                                 User user(username, name, pass);
 

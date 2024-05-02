@@ -70,42 +70,47 @@ void UserService::addPrivateChat(PrivateChat *privateChat) {
     firstUser >> firstUserData;
     firstUser.close();
 
-    json &privateChats = firstUserData[1]["Private Chats"];
+    for(const auto& privateChatEntry : firstUserData[1]["Private Chats"]) {
+        if(privateChatEntry.contains(privateChat->getUsers()[1])) {
+            cout << "Private Chat with " << privateChat->getUsers()[1] << " already existed." << endl;
+            break;
+        } else {
+            json &privateChats = firstUserData[1]["Private Chats"];
 
-    json privateChatData;
-    privateChatData[privateChat->getUsers()[1]] = {
-            {"You",json::array()},
-            {privateChat->getUsers()[1],json::array()}
-    };
+            json privateChatData;
+            privateChatData[privateChat->getUsers()[1]] = {
+                    {"You",json::array()},
+                    {privateChat->getUsers()[1],json::array()}
+            };
 
-    privateChats.push_back(privateChatData);
+            privateChats.push_back(privateChatData);
 
-    ofstream outPrivateChat(firstFile);
-    outPrivateChat << firstUserData.dump(4) << endl;
-    outPrivateChat.close();
+            ofstream outPrivateChat(firstFile);
+            outPrivateChat << firstUserData.dump(4) << endl;
+            outPrivateChat.close();
 
-    string secondFile = privateChat->getUsers()[1] + ".json";
-    ifstream secondUser(secondFile);
-    json secondUserData;
-    secondUser >> secondUserData;
-    secondUser.close();
+            string secondFile = privateChat->getUsers()[1] + ".json";
+            ifstream secondUser(secondFile);
+            json secondUserData;
+            secondUser >> secondUserData;
+            secondUser.close();
 
+            json &privateChats1 = secondUserData[1]["Private Chats"];
 
-    cout << secondUserData << endl;
-    json &privateChats1 = secondUserData[1]["Private Chats"];
+            json privateChatData1;
+            privateChatData1[privateChat->getUsers()[0]] = {
+                    {"You",json::array()},
+                    {privateChat->getUsers()[0],json::array()}
+            };
 
-    json privateChatData1;
-    privateChatData1[privateChat->getUsers()[0]] = {
-            {"You",json::array()},
-            {privateChat->getUsers()[0],json::array()}
-    };
+            privateChats1.push_back(privateChatData1);
 
-    privateChats1.push_back(privateChatData1);
-
-    ofstream outPrivateChat1(secondFile);
-    outPrivateChat1 << secondUserData.dump(4) << endl;
-    outPrivateChat1.close();
-
+            ofstream outPrivateChat1(secondFile);
+            outPrivateChat1 << secondUserData.dump(4) << endl;
+            outPrivateChat1.close();
+            cout << "Private Chat with " << privateChat->getUsers()[1] << " has been created successfully." << endl;
+        }
+    }
 }
 
 void UserService::addFriendRequest(int fromUserId, int toUserId) {}
@@ -148,45 +153,43 @@ void UserService::sendMessage(string &message, string &date, string &fromUser, s
         user->messageUser(toUser,message);
     }
 
+    string secondUser = toLower(toUser);
     string firstUserFile = fromUser + ".json";
-    ifstream getUser1PrivateChat(firstUserFile);
-    json privateChatUser1;
-    getUser1PrivateChat >> privateChatUser1;
+    ifstream getDataFromFirstUserFile(firstUserFile);
+    json getFirstUserData;
+    getDataFromFirstUserFile >> getFirstUserData;
+    getDataFromFirstUserFile.close();
 
-    getUser1PrivateChat.close();
+    for(auto& privateChat : getFirstUserData[1]["Private Chats"]){
+        if(privateChat.contains(toUser)){
+            privateChat[toUser]["You"].push_back({
+                {message,date}
+            });
+            break;
+        }
+    }
 
-    cout << privateChatUser1 << endl;
-    json userMessage1 = {
-            {"message", message},
-            {"date", date}
-    };
+    ofstream senderOutFile(firstUserFile);
+    senderOutFile << getFirstUserData.dump(4) << endl;
+    senderOutFile.close();
 
+    string secondUserFile = secondUser + ".json";
+    ifstream getDataFromSecondUserFile(secondUserFile);
+    json secondUserData;
+    getDataFromSecondUserFile >> secondUserData;
+    getDataFromSecondUserFile.close();
 
-    json &user1Array = privateChatUser1["Private Chats"][toUser]["You"];
-    user1Array.push_back(userMessage1);
+    for(auto& privateChat : secondUserData[1]["Private Chats"]){
+        if(privateChat.contains(fromUser)){
+            privateChat[fromUser][fromUser].push_back({
+                {message,date}
+            });
+            break;
+        }
+    }
 
-    cout << privateChatUser1 << endl;
-    ofstream putMessageUser1(firstUserFile);
-    putMessageUser1 << privateChatUser1.dump(4) << endl;
-    putMessageUser1.close();
-
-    string secondUserFile = toUser + ".json";
-    ifstream getUser2PrivateChat(secondUserFile);
-
-    json privateChatUser2;
-    getUser2PrivateChat >> privateChatUser2;
-    getUser2PrivateChat.close();
-
-    json userMessage2 = {
-            {"message", message},
-            {"date", date}
-    };
-
-    json &user2Array = privateChatUser2["Private Chats"][fromUser][fromUser];
-    user2Array.push_back(userMessage2);
-
-    ofstream putMessageUser2(secondUserFile);
-    putMessageUser2 << privateChatUser2.dump(4) << endl;
-    putMessageUser2.close();
+    ofstream secondUserOutData(secondUserFile);
+    secondUserOutData << secondUserData.dump(4) << endl;
+    secondUserOutData.close();
 
 }
