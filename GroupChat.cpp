@@ -1,11 +1,28 @@
 #include "GroupChat.h"
 
+GroupChat::GroupChat(std::string name) {
+    groupName = name;
+}
+
+
 void GroupChat::addUser(string user) {
     getUsers().push_back(user);
 }
 
 void GroupChat::removeUser(string user) {
+    for(auto& removeUserFromUsers : users){
+        if(removeUserFromUsers == user){
+            removeUserFromUsers.erase(removeUserFromUsers.begin());
+        }
+    }
+}
 
+const string GroupChat::getGroupName() const {
+    return groupName;
+}
+
+void GroupChat::setChatName(std::string name) {
+    groupName = name;
 }
 
 void GroupChat::displayUsers() {

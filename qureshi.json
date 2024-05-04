@@ -1,198 +1,132 @@
 [
     {
-        "Hazim": {
-            "Name": "Hazim",
+        "Qureshi": {
+            "Name": "Qureshi",
             "Password": "hash"
         }
     },
     {
         "Private Chats": [
             {
-                "Ibrahim": [
+                "Hazim": [
                     {
                         "You": {
-                            "Hello": "19:56"
-                        }
-                    },
-                    {
-                        "You": {
-                            "How are you": "19:56"
-                        }
-                    },
-                    {
-                        "You": {
-                            "How are you": "20:16"
-                        }
-                    },
-                    {
-                        "Ibrahim": {
-                            "Hey Babe": "20:16"
-                        }
-                    },
-                    {
-                        "Ibrahim": {
-                            "Whats up": "20:16"
-                        }
-                    },
-                    {
-                        "You": {
-                            "Nothing": "20:18"
-                        }
-                    },
-                    {
-                        "You": {
-                            "Have you done your assignment?": "23:22"
-                        }
-                    }
-                ]
-            },
-            {
-                "Abdullah": []
-            },
-            {
-                "Qureshi": [
-                    {
-                        "Qureshi": {
                             "Hi": "23:37"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "What are you doing?": "23:37"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "Hey": "11:28"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How's doin mate": "11:31"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "Whassup mate": "11:36"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How are you": "11:36"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How doing": "11:42"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How": "11:42"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How": "11:42"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How": "11:43"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How are you": "13:57"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "Where are you": "13:57"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "Hey": "14:22"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "What": "14:22"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "Hey whassup": "14:30"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "hey": "14:30"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "Hello": "14:31"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "What the hell": "14:31"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "What": "14:34"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How": "14:34"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "Hey": "14:42"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How": "14:42"
                         }
                     },
                     {
-                        "Qureshi": {
+                        "You": {
                             "Hey boy": "15:59"
                         }
                     },
                     {
-                        "You": {
+                        "Hazim": {
                             "How are you": "15:59"
-                        }
-                    }
-                ]
-            },
-            {
-                "Stokes": [
-                    {
-                        "You": {
-                            "Hello": "9:20"
-                        }
-                    },
-                    {
-                        "You": {
-                            "How are you": "9:20"
-                        }
-                    },
-                    {
-                        "Stokes": {
-                            "Hey Bud": "9:22"
-                        }
-                    },
-                    {
-                        "You": {
-                            "Hey babe": "20:44"
                         }
                     }
                 ]

@@ -1,0 +1,39 @@
+[
+    {
+        "Stokes": {
+            "Name": "Stokes",
+            "Password": "bhenchod"
+        }
+    },
+    {
+        "Private Chats": [
+            {
+                "Hazim": [
+                    {
+                        "Hazim": {
+                            "Hello": "9:20"
+                        }
+                    },
+                    {
+                        "Hazim": {
+                            "How are you": "9:20"
+                        }
+                    },
+                    {
+                        "You": {
+                            "Hey Bud": "9:22"
+                        }
+                    },
+                    {
+                        "Hazim": {
+                            "Hey babe": "20:44"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "Group Chats": []
+    }
+]

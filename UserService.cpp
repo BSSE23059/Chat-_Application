@@ -45,6 +45,7 @@ void UserService::addUser(User* user) {
     ofstream usersJson(filename);
     usersJson << userData.dump(4);
     usersJson.close();
+    userInterface(user->getUserID(),user->getUserName(),user->getUserPassword());
 
 }
 
@@ -222,4 +223,36 @@ void UserService::displayMessages(std::string &fromUser,string& toUser) {
         }
     }
 
+}
+
+void UserService::addGroupChat(GroupChat *groupChat) {
+
+    json groupMembers;
+    groupMembers["Group Members"] = json::array();
+    for(auto& getGroupMemberNames : groupChat->getUsers()){
+        groupMembers["Group Members"].push_back(getGroupMemberNames);
+    }
+
+    for(int addGroupMembersToJson=0;addGroupMembersToJson<groupChat->getUsers().size();addGroupMembersToJson++){
+
+        string memberFileName = toLower(groupChat->getUsers()[addGroupMembersToJson]) + ".json";
+        ifstream readGroupMembersFile(memberFileName);
+        json groupMembersJsonData;
+        readGroupMembersFile >> groupMembersJsonData;
+        readGroupMembersFile.close();
+
+        json& memberGroupsData = groupMembersJsonData[2]["Group Chats"];
+        json createdGroupData;
+        createdGroupData[groupChat->getGroupName()] = {
+                {groupMembers},
+                {"Messages",json::array()}
+        };
+
+        memberGroupsData.push_back(createdGroupData);
+
+        ofstream putMemberGroupData(memberFileName);
+        putMemberGroupData << groupMembersJsonData.dump(4) << endl;
+        putMemberGroupData.close();
+
+    }
 }

@@ -38,6 +38,11 @@
                         "Hazim": {
                             "Nothing": "20:18"
                         }
+                    },
+                    {
+                        "Hazim": {
+                            "Have you done your assignment?": "23:22"
+                        }
                     }
                 ]
             },
@@ -63,6 +68,24 @@
         ]
     },
     {
-        "Group Chats": []
+        "Group Chats": [
+            {
+                "Memories": [
+                    [
+                        {
+                            "Group Members": [
+                                "Hazim",
+                                "Ibrahim",
+                                "Qureshi"
+                            ]
+                        }
+                    ],
+                    [
+                        "Messages",
+                        []
+                    ]
+                ]
+            }
+        ]
     }
 ]

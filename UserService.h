@@ -5,6 +5,7 @@
 #include <fstream>
 #include <unordered_map>
 #include "PrivateChat.h"
+#include "GroupChat.h"
 #include "userInterface.h"
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
@@ -24,6 +25,7 @@ public:
     void displayUser(unordered_map<int, User*>& usersById);
     void removeUser(int userId);
     void addPrivateChat(PrivateChat* privateChat);
+    void addGroupChat(GroupChat* groupChat);
     void addFriendRequest(int fromUserId, int toUserId);
     void approveFriendRequest(int fromUserId, int toUserId);
     void rejectFriendRequest(int fromUserId, int toUserId);

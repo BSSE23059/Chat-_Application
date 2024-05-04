@@ -3,6 +3,7 @@
 #include "User.h"
 #include "Chat.h"
 #include "PrivateChat.h"
+#include "GroupChat.h"
 #include "userInterface.h"
 #include "createChats.h"
 #include "showChats.h"

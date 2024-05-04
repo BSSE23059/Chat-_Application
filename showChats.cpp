@@ -34,7 +34,6 @@ void displayChats(string username, string name, string password){
     do {
         cout << "Enter chat name: ";
         cin >> chatName;
-        userService->displayMessages(username,chatName);
         validChatName = false;
         if (userChats.size() > 1 && userChats[1].contains("Private Chats")) {
             json privateChats = userChats[1]["Private Chats"];
@@ -45,18 +44,23 @@ void displayChats(string username, string name, string password){
                         validChatName = true;
                         string message;
                         cin.ignore();
+
                         while(true){
+
+                            system("clear");
+                            Sleep(1000);
+                            userService->displayMessages(username,chatName);
                             cout << "Send message ('0' to exit): ";
                             getline(cin,message);
                             if (message == "0") {
                                 break; // Exit the send message loop
                             }
                             // Send message logic here
-                            cout << "Message sent: " << message << endl;
                             time_t now = time(0);
                             tm* localTime = localtime(&now);
                             string date = to_string(localTime->tm_hour) + ":"+ to_string(localTime->tm_min);
                             userService->sendMessage(message,date,username,chatName);
+
                         }
                         break;
                     }
