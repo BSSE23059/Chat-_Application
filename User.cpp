@@ -6,6 +6,9 @@ User::User(string id, std::string n, std::string pass) {
     password = pass;
 }
 
+User::User() = default;
+
+
 string User::getUserID() const {
     return ID;
 }
@@ -76,4 +79,12 @@ void User::displayChats() {
         cout << chatIndex << ". " << username << endl;
         chatIndex++;
     }
+}
+
+bool User::getAdminStatus() {
+    return false;
+}
+
+const unordered_map<string, GroupChat *> &User::getGroupChats() const {
+    return groupChats;
 }

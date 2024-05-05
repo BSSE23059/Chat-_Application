@@ -10,8 +10,8 @@ void userInterface(string userName,string name, string password){
         cout << "                   Welcome to Chat-up                     " << endl;
         cout << "__________________________________________________________" << endl;
         cout << "1-> Create a chat room." << endl;
-        cout << "2-> Chats." << endl;
-        cout << "3-> Send a friend request." << endl;
+        cout << "2-> Private Chats." << endl;
+        cout << "3-> Group Chats." << endl;
         cout << "4-> Exit." << endl;
         cout << "Enter your choice :";
         cin >> choice;
@@ -22,10 +22,11 @@ void userInterface(string userName,string name, string password){
                 break;
             }
             case 2:{
-                displayChats(userName,name,password);
+                displayPrivateChats(userName,name,password);
                 break;
             }
             case 3:{
+                displayGroupChats(userName,name,password);
                 break;
             }
             default :{

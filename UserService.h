@@ -20,9 +20,12 @@ public:
     static UserService* getInstance();
     void addUser(User* user);
     void loginUser(string& userName, const string& password);
-    void sendMessage(string& message, string& date, string& fromUser, string& toUser);
+    void sendMessage(string message, string date, string& fromUser, string& toUser);
+    void sendMessageToGroup(string message, string messageDate, string& fromUser, string& groupName);
     void displayMessages(string& fromUser,string& toUser);
+    void displayGroupMessages(string username, string groupChat);
     void displayUser(unordered_map<int, User*>& usersById);
+    void viewGroupMembers(string& groupChat, string& username);
     void removeUser(int userId);
     void addPrivateChat(PrivateChat* privateChat);
     void addGroupChat(GroupChat* groupChat);

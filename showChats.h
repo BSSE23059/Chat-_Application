@@ -10,6 +10,7 @@
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
 
-void displayChats(string username, string name, string password);
+void displayPrivateChats(string username, string name, string password);
+void displayGroupChats(string username, string name, string password);
 
 #endif //CHAT__APPLICATION_SHOWCHATS_H

@@ -138,7 +138,7 @@ void UserService::loginUser(std::string &userName, const std::string &password) 
 
 }
 
-void UserService::sendMessage(string &message, string &date, string &fromUser, string &toUser) {
+void UserService::sendMessage(string message, string date, string &fromUser, string &toUser) {
     if(usersById.find(fromUser) != usersById.end() && usersById.find(toUser) != usersById.end()){
         User *user = usersById[fromUser];
         user->messageUser(toUser,message);
@@ -241,11 +241,12 @@ void UserService::addGroupChat(GroupChat *groupChat) {
         readGroupMembersFile >> groupMembersJsonData;
         readGroupMembersFile.close();
 
+        json messages;
+        messages["Messages"] = json::array();
         json& memberGroupsData = groupMembersJsonData[2]["Group Chats"];
         json createdGroupData;
         createdGroupData[groupChat->getGroupName()] = {
-                {groupMembers},
-                {"Messages",json::array()}
+                groupMembers,messages
         };
 
         memberGroupsData.push_back(createdGroupData);
@@ -255,4 +256,126 @@ void UserService::addGroupChat(GroupChat *groupChat) {
         putMemberGroupData.close();
 
     }
+}
+
+void UserService::viewGroupMembers(std::string &groupChat, std::string &username) {
+    for(int i=0;i<usersById.size();i++){
+        auto it = usersById.find(username);
+        if(it != usersById.end()){
+            if(it->second->getUserID() == username){
+                it->second->getGroupChats();
+            }
+        }
+    }
+    string userFile = toLower(username) + ".json";
+    ifstream getMembersFromUserFile(userFile);
+    json userData;
+    getMembersFromUserFile >> userData;
+    getMembersFromUserFile.close();
+
+    try{
+        for(auto& groupChats : userData[2]["Group Chats"]){
+            if(groupChats.contains(groupChat)){
+                for(auto& group : groupChats[groupChat]){
+                    if(group.contains("Group Members")){
+                        for(auto& members : group["Group Members"]){
+                            cout << members.get<string>() << endl;
+                        }
+                    }
+                }
+            } else {
+                cout << "You don't have a group " << groupChat << " ." << endl;
+            }
+        }
+    } catch (exception& e) {
+        cout << "Error: " << e.what() << endl;
+    }
+}
+
+void UserService::sendMessageToGroup(std::string message, std::string messageDate, std::string &fromUser,std::string &groupName) {
+    string userFile = toLower(fromUser) + ".json";
+    ifstream getMembersFromUserFile(userFile);
+    json userData;
+    getMembersFromUserFile >> userData;
+    getMembersFromUserFile.close();
+
+    json messageObject;
+    messageObject[fromUser] = {
+            {message,messageDate}
+    };
+    try{
+        for(auto& groupChats : userData[2]["Group Chats"]){
+            if(groupChats.contains(groupName)){
+                for(auto& group : groupChats[groupName]){
+                    if(group.contains("Group Members")){
+                        for(auto& members : group["Group Members"]){
+                            string memName = members.get<string>();
+                            string memberFile = toLower(memName) + ".json";
+                            ifstream getMemberFileData(memberFile);
+                            json memberData;
+                            getMemberFileData >> memberData;
+                            getMemberFileData.close();
+
+                            for(auto& groupInMember : memberData[2]["Group Chats"]){
+                                if(groupInMember.contains(groupName)){
+                                    for(auto& messages : groupInMember[groupName]){
+                                        if(messages.contains("Messages")){
+                                            messages["Messages"].push_back(messageObject);
+                                        }
+                                    }
+                                }
+                            }
+                            ofstream putMessagesToMembersFile(memberFile);
+                            putMessagesToMembersFile << memberData.dump(4);
+                            putMessagesToMembersFile.close();
+                        }
+                    }
+                }
+            } else {
+                cout << "You don't have a group " << groupName << " ." << endl;
+            }
+        }
+    } catch (exception& e) {
+        cout << "Error: " << e.what() << endl;
+    }
+}
+
+void UserService::displayGroupMessages(std::string username, std::string groupChat) {
+    string userFile = toLower(username) + ".json";
+    ifstream getUserDataFromFile(userFile);
+    json userData;
+    getUserDataFromFile >> userData;
+    getUserDataFromFile.close();
+
+
+    try{
+        for(auto& groupChats : userData[2]["Group Chats"]){
+            if(groupChats.contains(groupChat)){
+                for(auto& group : groupChats[groupChat]){
+                    if(group.contains("Messages")){
+                        for(auto& members : group["Messages"]){
+                            for(auto messages : members.items()){
+                                if(messages.key() == username){
+                                    for (auto& msgTime : messages.value().items()) {
+                                        cout << "\t\t" << msgTime.key() << " at " << msgTime.value();
+                                    }
+                                    cout << " : You" << endl;
+                                } else {
+                                    cout << messages.key() << " : ";
+                                    for (auto& msgTime : messages.value().items()) {
+                                        cout << msgTime.key() << " at " << msgTime.value() << endl;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                cout << "You don't have a group " << groupChat << " ." << endl;
+            }
+        }
+    }catch (exception& e){
+        cout << "Error :" << e.what() << endl;
+    }
+
 }

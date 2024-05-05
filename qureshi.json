@@ -128,6 +128,11 @@
                         "Hazim": {
                             "How are you": "15:59"
                         }
+                    },
+                    {
+                        "You": {
+                            "Why": "18:35"
+                        }
                     }
                 ]
             }
@@ -137,19 +142,42 @@
         "Group Chats": [
             {
                 "Memories": [
-                    [
-                        {
-                            "Group Members": [
-                                "Hazim",
-                                "Ibrahim",
-                                "Qureshi"
-                            ]
-                        }
-                    ],
-                    [
-                        "Messages",
-                        []
-                    ]
+                    {
+                        "Group Members": [
+                            "Hazim",
+                            "Ibrahim",
+                            "Qureshi"
+                        ]
+                    },
+                    {
+                        "Messages": [
+                            {
+                                "Hazim": {
+                                    "Hello": "18:23"
+                                }
+                            },
+                            {
+                                "Hazim": {
+                                    "Where are you guys": "18:24"
+                                }
+                            },
+                            {
+                                "Hazim": {
+                                    "Hey Babes": "18:32"
+                                }
+                            },
+                            {
+                                "Qureshi": {
+                                    "Hi Hazim": "18:34"
+                                }
+                            },
+                            {
+                                "Hazim": {
+                                    "Where are you": "19:15"
+                                }
+                            }
+                        ]
+                    }
                 ]
             }
         ]

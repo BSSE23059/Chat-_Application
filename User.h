@@ -4,6 +4,7 @@
 #include <vector>
 #include <unordered_map>
 #include "PrivateChat.h"
+#include "GroupChat.h"
 #include "Message.h"
 using namespace std;
 
@@ -13,13 +14,17 @@ private:
     string ID;
     string password;
     unordered_map<string, User*> friendsById;
+protected:
     unordered_map<string, PrivateChat*> privateChats;
-
+    unordered_map<string, GroupChat*> groupChats;
 public:
     User(string id, std::string  n, std::string  pass);
+    User();
     string getUserID() const;
     string getUserName() const;
     string getUserPassword() const;
+    const unordered_map<string, GroupChat *> &getGroupChats() const;
+    bool getAdminStatus();
     const unordered_map<string, PrivateChat *> &getPrivateChats() const;
     void setUserID(const string& userID);
     void setUserName(const string& userName);
